@@ -1,0 +1,90 @@
+
+/************* myCalculator*/
+
+#myCalculator{
+	width: 400px;
+
+}
+
+#myCalculator div{
+	/*font-size: 16px;*/
+	text-align: center;
+	width: 215px;
+	border: 3px solid #226698;
+	padding: 5px;
+	background-color: #2D3374;
+	border-spacing: 3px;
+	box-shadow: 5px 5px 5px #000;
+	border-radius: 10px;
+}
+
+#myCalculator div input{
+	margin: 5px 0;
+}
+
+#myCalculator div #display {
+	width: 186px; 
+	height: 30px;
+	text-align: right;
+	margin-top: 10px;
+}
+
+#myCalculator input[type= button] {
+	width: 45px; 
+	height: 35px;
+}
+
+/*****************modal window *************/
+
+#myBtn{		
+	width: 300px;
+	height: 70px;
+	font-size: 30px;
+	color: #fff;
+	background-color: #134496;
+	border: 3px solid #ccc;
+	border-radius: 10px;
+	margin: 30px;
+}
+
+ /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {	
+	border-radius: 10px;
+    background-color: rgba(3,29,60,0.7);
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 270px; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.close:hover,
+.close:focus {
+    /*color: #FF9D00;*/
+    text-shadow: 0 0 3px #fff;
+    text-decoration: none;
+    cursor: pointer;
+} 
+

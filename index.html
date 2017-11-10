@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Калькулятор</title>
+	<link rel="stylesheet" href="style.css">
+	
+</head>
+<body>
+
+
+
+<!-- ************ modal window with calculator inside ************************ -->
+
+
+ <!-- Trigger/Open The Modal -->
+<button id="myBtn">Modal calculator</button>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <form name="calculator" id="myCalculator">
+		<div>
+		<input type="text" name="input" size="16" id="display">
+			<input type="button" value="1" class="addV">
+			<input type="button" value="2" class="addV">
+			<input type="button" value="3" class="addV">
+			<input type="button" value="+" id="add">
+
+			<input type="button" value="4" class="addV">
+			<input type="button" value="5" class="addV">
+			<input type="button" value="6" class="addV">
+			<input type="button" value="-" id="subtr">
+
+			<input type="button" value="7" class="addV">
+			<input type="button" value="8" class="addV">
+			<input type="button" value="9" class="addV">
+			<input type="button" value="x" id="mult">
+
+			<input type="button" value="c" id="clearIn">
+			<input type="button" value="0" class="addV">
+			<input type="button" value="=" id="doit">
+			<input type="button"  value="/" id="div">
+		</div>
+	</form>
+  </div>
+
+</div> 
+
+
+
+<script>
+
+// ***************** calculator ****************************
+
+
+clearInput();
+	
+function addValue(buttonValue){
+	var buttonValue = this.value;	
+	var current = document.getElementById('display').value;	
+	document.getElementById('display').value = current + buttonValue;	
+};
+
+function addition(){
+	var current = document.getElementById('display').value;		
+	document.getElementById('display').value = current + "+";	
+};
+
+function subtraction(){
+	var current = document.getElementById('display').value;		
+	document.getElementById('display').value = current + "-";
+};
+
+function multiplication(){
+	var current = document.getElementById('display').value;		
+	document.getElementById('display').value = current + "*";
+};
+
+function division(){
+	var current = document.getElementById('display').value;		
+	document.getElementById('display').value = current + "/";
+};
+
+function doIt(){
+	var current = document.getElementById('display').value;	
+	document.getElementById('display').value = eval(current);	
+};
+
+function clearInput(){
+	var current = document.getElementById('display').value;
+	document.getElementById('display').value = "";
+};
+
+
+document.getElementById("add").onclick = addition;
+document.getElementById("subtr").onclick = subtraction;
+document.getElementById("mult").onclick = multiplication;
+document.getElementById("div").onclick = division;
+document.getElementById("clearIn").onclick = clearInput;
+document.getElementById("doit").onclick = doIt;
+
+var buttonValues = document.getElementsByClassName("addV");
+for(var i = 0; i < buttonValues.length; i++){	
+	buttonValues[i].onclick = addValue;
+};
+
+
+
+// ********************* modal window *******************************
+
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+    modal.style.display = "block";
+    clearInput();
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    };
+}; 
+
+</script>
+	
+</body>
+</html>
